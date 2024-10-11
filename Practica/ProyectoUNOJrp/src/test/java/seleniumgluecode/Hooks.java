@@ -42,7 +42,7 @@ public class Hooks {
             Allure.addAttachment("Failed Screeshot", new ByteArrayInputStream(screenshot));
         }
 
-        //driverManager.quitDriver();
+        driverManager.quitDriver();
     }
 
     public static WebDriver getDriver(){

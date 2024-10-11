@@ -38,10 +38,9 @@ public class ElementsPage extends BasePage {
         this.click(textBox);
     }
 
-    public String tittleTextBox() throws Exception {
+    public String titleTextBox() throws Exception {
         return this.getText(tittleTextBox);
     }
-
 
 
 }

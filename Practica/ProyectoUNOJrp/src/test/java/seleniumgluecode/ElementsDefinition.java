@@ -23,7 +23,7 @@ public class ElementsDefinition extends TestBase{
     }
 
     @Then("Se muestra correctamente el formulario de {string}")
-    public void seMuestraCorrectamenteElFormularioDeTextBox(String tittletexbox) throws Exception {
-        Assert.assertEquals(tittletexbox, elementsPagePage.tittleTextBox());
+    public void seMuestraCorrectamenteElFormularioDeTextBox(String titletexbox) throws Exception {
+        Assert.assertEquals(titletexbox, elementsPagePage.titleTextBox());
     }
 }
