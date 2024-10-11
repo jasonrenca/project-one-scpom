@@ -14,6 +14,12 @@ public class ElementsPage extends BasePage {
     @FindBy(xpath = "//div[normalize-space()='Elements']")
     WebElement titleElements;
 
+    @FindBy(xpath = "//span[normalize-space()='Text Box']")
+    WebElement textBox;
+
+    @FindBy(xpath = "//h1[normalize-space()='Text Box']")
+    WebElement tittleTextBox;
+
     public ElementsPage(WebDriver driver) {
         super(driver);
     }
@@ -25,6 +31,15 @@ public class ElementsPage extends BasePage {
 
     public String homeElementsDisplayed() throws Exception {
         return this.getText(titleElements);
+    }
+
+    public void clickTextBox() throws Exception {
+        this.isDisplayed(textBox);
+        this.click(textBox);
+    }
+
+    public String tittleTextBox() throws Exception {
+        return this.getText(tittleTextBox);
     }
 
 
