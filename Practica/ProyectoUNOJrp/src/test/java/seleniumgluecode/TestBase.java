@@ -9,7 +9,7 @@ public class TestBase {
 
     protected WebDriver driver = Hooks.getDriver();
     protected HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-    protected ElementsPage elementsPagePage = PageFactory.initElements(driver, ElementsPage.class);
+    protected ElementsPage elementsPage = PageFactory.initElements(driver, ElementsPage.class);
 
 
 }

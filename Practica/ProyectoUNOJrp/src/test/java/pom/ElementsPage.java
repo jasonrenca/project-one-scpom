@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class ElementsPage extends BasePage {
 
+    int espera = 1;
 
     @FindBy(xpath = "(//div[@class='card mt-4 top-card'])[1]")
     WebElement card1;
@@ -14,8 +15,8 @@ public class ElementsPage extends BasePage {
     @FindBy(xpath = "//div[normalize-space()='Elements']")
     WebElement titleElements;
 
-    @FindBy(xpath = "//span[normalize-space()='Text Box']")
-    WebElement textBox;
+    @FindBy(id = "item-0")
+    WebElement item0;
 
     @FindBy(xpath = "//h1[normalize-space()='Text Box']")
     WebElement tittleTextBox;
@@ -38,6 +39,18 @@ public class ElementsPage extends BasePage {
     @FindBy(id = "name")
     WebElement name;
 
+    @FindBy(id = "item-2")
+    WebElement item2;
+
+    @FindBy(xpath = "//label[normalize-space()='Yes']")
+    WebElement yesRadio;
+
+    @FindBy(xpath = "//label[normalize-space()='Impressive']")
+    WebElement impressiveRadio;
+
+    @FindBy(id = "noRadio")
+    WebElement noRadio;
+
 
     public ElementsPage(WebDriver driver) {
         super(driver);
@@ -53,8 +66,8 @@ public class ElementsPage extends BasePage {
     }
 
     public void clickTextBox() throws Exception {
-        this.isDisplayed(textBox);
-        this.click(textBox);
+        this.isDisplayed(item0);
+        this.click(item0);
     }
 
     public String titleTextBox() throws Exception {
@@ -94,6 +107,32 @@ public class ElementsPage extends BasePage {
         return this.getText(name);
     }
 
+    public void clickRadioButton() throws Exception {
+        this.waitFor(espera);
+        this.isDisplayed(item2);
+        this.click(item2);
+    }
+
+    public void clickRbYes() throws Exception {
+        this.waitFor(espera);
+        this.isDisplayed(yesRadio);
+        this.click(yesRadio);
+    }
+
+    public String txtYes() throws Exception {
+        this.waitFor(espera);
+        return this.getText(yesRadio);
+    }
+
+    public void clickImpressive() throws Exception {
+        this.waitFor(espera);
+        this.isDisplayed(impressiveRadio);
+        this.click(impressiveRadio);
+    }
+
+    public String txtImpressive() throws Exception {
+        return this.getText(impressiveRadio);
+    }
 
 
 }

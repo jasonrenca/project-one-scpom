@@ -66,6 +66,13 @@ public class BasePage {
         }
     }
 
+    protected void waitFor(long segundos) {
+        try {
+            Thread.sleep(segundos * 1000);
+        } catch (InterruptedException ignored) {
+        }
+    }
+
 
 
 

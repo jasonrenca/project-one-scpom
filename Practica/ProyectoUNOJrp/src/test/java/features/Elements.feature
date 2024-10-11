@@ -15,7 +15,7 @@ Feature: Inicio de la Opcion Elements de Demo QA
     And Hace click en la opcion Text Box
     Then Se muestra correctamente el formulario de "Text Box"
 
-  @PRUEBA
+
   Scenario: Ingresar datos de Usuario en la opcion Text Box
     Given El usuario se encuentra en la pagina Home de QA Demo
     And Hace click en la carta de Elements
@@ -27,6 +27,17 @@ Feature: Inicio de la Opcion Elements de Demo QA
     And Hace click en boton Submit
     Then El usuario "Name:Jacson Renca" queda registrado bajo el formulario correctamente
 
+  @PRUEBA
+  Scenario: Ingresar a las Opciones de Radio Button
+    Given El usuario se encuentra en la pagina Home de QA Demo
+    And Hace click en la carta de Elements
+    And Hace click en la opcion Radio Button
+    And Hace click en el radio button Yes
+    And Valida texto "Yes" del radio button seleccionado Yes
+    And Hace click en el radio button Impressive
+    And Valida texto "Impressive" del radio button seleccionado Impressive
+    And Hace click en el radio button Impressive y valida bloqueado
+    Then El usuario valida cada radio button correctamente
 
 
 
