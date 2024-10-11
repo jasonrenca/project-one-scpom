@@ -26,4 +26,35 @@ public class ElementsDefinition extends TestBase{
     public void seMuestraCorrectamenteElFormularioDeTextBox(String titletexbox) throws Exception {
         Assert.assertEquals(titletexbox, elementsPagePage.titleTextBox());
     }
+
+    @And("Ingresa su nombre completo {string}")
+    public void ingresaSuNombreCompleto(String name) throws Exception {
+        elementsPagePage.ingresaName(name);
+    }
+
+    @And("Ingresa su email {string}")
+    public void ingresaSuEmail(String email) throws Exception {
+        elementsPagePage.ingresaEmail(email);
+    }
+
+    @And("Ingresa su direccion {string}")
+    public void ingresaSuDireccion(String direccion) throws Exception {
+        elementsPagePage.ingresaDireccion(direccion);
+    }
+
+    @And("Ingresa su direccion permanente {string}")
+    public void ingresaSuDireccionPermanente(String direccPerma) throws Exception {
+        elementsPagePage.ingresaDireccionPerma(direccPerma);
+    }
+
+    @And("Hace click en boton Submit")
+    public void haceClickEnBotonSubmit() throws Exception {
+        elementsPagePage.clickSubmit();
+    }
+
+    @Then("El usuario {string} queda registrado bajo el formulario correctamente")
+    public void elUsuarioQuedaRegistradoBajoElFormularioCorrectamente(String name) throws Exception {
+        Assert.assertEquals(name, elementsPagePage.usernameTextBox());
+
+    }
 }

@@ -20,6 +20,25 @@ public class ElementsPage extends BasePage {
     @FindBy(xpath = "//h1[normalize-space()='Text Box']")
     WebElement tittleTextBox;
 
+    @FindBy(id = "userName")
+    WebElement userName;
+
+    @FindBy(id = "userEmail")
+    WebElement userEmail;
+
+    @FindBy(id = "currentAddress")
+    WebElement currentAddress;
+
+    @FindBy(id = "permanentAddress")
+    WebElement permanentAddress;
+
+    @FindBy(id = "submit")
+    WebElement submit;
+
+    @FindBy(id = "name")
+    WebElement name;
+
+
     public ElementsPage(WebDriver driver) {
         super(driver);
     }
@@ -41,6 +60,40 @@ public class ElementsPage extends BasePage {
     public String titleTextBox() throws Exception {
         return this.getText(tittleTextBox);
     }
+
+    public void ingresaName(String name) throws Exception {
+        this.click(userName);
+        this.clear(userName);
+        this.sendKeys(userName, name);
+    }
+
+    public void ingresaEmail(String email) throws Exception {
+        this.click(userEmail);
+        this.clear(userEmail);
+        this.sendKeys(userEmail, email);
+    }
+
+    public void ingresaDireccion(String direccion) throws Exception {
+        this.click(currentAddress);
+        this.clear(currentAddress);
+        this.sendKeys(currentAddress, direccion);
+    }
+
+    public void ingresaDireccionPerma(String direccPerma) throws Exception {
+        this.click(permanentAddress);
+        this.clear(permanentAddress);
+        this.sendKeys(permanentAddress, direccPerma);
+    }
+
+    public void clickSubmit() throws Exception {
+        this.isDisplayed(submit);
+        this.click(submit);
+    }
+
+    public String usernameTextBox() throws Exception {
+        return this.getText(name);
+    }
+
 
 
 }

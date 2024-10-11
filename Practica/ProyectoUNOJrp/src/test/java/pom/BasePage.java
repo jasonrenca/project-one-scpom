@@ -1,6 +1,7 @@
 package pom;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -46,6 +47,23 @@ public class BasePage {
             throw new Exception("No se pudo obtener el Titulo del driver");
         }
 
+    }
+
+    public void clear(WebElement element) throws Exception {
+        try {
+            element.clear();
+            element.sendKeys(Keys.ARROW_LEFT);
+        } catch (Exception e) {
+            throw new Exception("No se encontró el elemento: " + element);
+        }
+    }
+
+    public void sendKeys(WebElement element, CharSequence parametro) throws Exception {
+        try {
+            element.sendKeys(parametro);
+        } catch (Exception e) {
+            throw new Exception("No se puede ingresar caracteres sobre el elemento: " + element);
+        }
     }
 
 
